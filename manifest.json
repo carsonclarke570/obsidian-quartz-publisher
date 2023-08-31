@@ -1,11 +1,10 @@
 {
-	"id": "sample-plugin",
-	"name": "Sample Plugin",
+	"id": "obsidian-quartz-publisher",
+	"name": "Quartz Publisher",
 	"version": "1.0.0",
 	"minAppVersion": "0.15.0",
-	"description": "This is a sample plugin for Obsidian. This plugin demonstrates some of the capabilities of the Obsidian API.",
-	"author": "Obsidian",
-	"authorUrl": "https://obsidian.md",
-	"fundingUrl": "https://obsidian.md/pricing",
+	"description": "A plugin to publish your changes in your obsidian vault directly to a remote Quartz 4.0 repo",
+	"author": "cclarkemagrab",
+	"authorUrl": "https://github.com/carsonclarke570",
 	"isDesktopOnly": false
 }

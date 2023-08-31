@@ -6,3 +6,39 @@ available in the app when your plugin is enabled.
 If your plugin does not need CSS, delete this file.
 
 */
+.change-list-add {
+    --change-color: #2e7d32;
+    --change-color-darken: #1b5e20;
+}
+
+.change-list-diff {
+    --change-color: #ed6c02;
+    --change-color-darken: #e65100;
+}
+
+.change-list-minus {
+    --change-color: #d32f2f;
+    --change-color-darken: #c62828;
+}
+
+.change-list label, .change-list svg {
+    color: var(--change-color)
+}
+
+.change-list input[type=checkbox] {
+    border-color: var(--change-color);
+} 
+
+.change-list input[type=checkbox]:hover {
+    border-color: var(--change-color-darken);
+} 
+
+.change-list input[type=checkbox]:checked {
+    background-color: var(--change-color);
+    border-color: var(--change-color);
+} 
+
+.change-list input[type=checkbox]:hover:checked {
+    background-color: var(--change-color-darken);
+    border-color: var(--change-color-darken);
+}
