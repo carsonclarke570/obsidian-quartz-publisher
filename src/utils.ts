@@ -8,4 +8,8 @@ function generateGitBlobHash(content: string){
 	return SHA1(gitBlob).toString();
 }
 
-export { generateGitBlobHash }
+function escapeRegExp(string: string) {
+	return string.replace(/[.*+?^${}()|[\]\\]/g, "\\$&"); // $& means the whole matched string
+}
+
+export { generateGitBlobHash, escapeRegExp }

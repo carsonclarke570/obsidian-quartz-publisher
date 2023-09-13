@@ -38,7 +38,7 @@ export default class Publisher {
                 fileName: change.path
             }, callback)
 
-            await new Promise(resolve => setTimeout(resolve, 1000))
+            await new Promise(resolve => setTimeout(resolve, 200))
 
             if (!result) {
                 success = false;

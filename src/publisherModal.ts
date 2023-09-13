@@ -1,4 +1,4 @@
-import { App, ButtonComponent, Modal, setIcon } from "obsidian";
+import { App, ButtonComponent, Modal, Notice, setIcon } from "obsidian";
 import { QuartzPublishPluginSettings } from "./settings";
 import Publisher from "./publisher";
 import PublisherStatusManager from "./publisherStatus";
@@ -55,6 +55,7 @@ export class PublisherModal {
             .onClick(async () => {
                 button.setDisabled(true)
                 this.status.setStatus("Attempting to publish your changes...")
+                new Notice("Attempting to publish your changes...")
                 
                 let i = 1;
                 const success = await this.publisher.publishAll(this.changesList.collect(), (event) => {
@@ -64,6 +65,7 @@ export class PublisherModal {
               
                 const message = success ? "Finished publishing your changes." : "Failed to publish your changes!";
                 this.status.setStatus(message)
+                new Notice(message)
 
                 this.refresh()
                 button.setDisabled(false)
@@ -115,7 +117,8 @@ export class PublisherModal {
     }
 
     async refresh() {
+        this.status.setStatus("Checking for changes...")
         await this.changesList.refresh()
-        
+        this.status.clear()
     }
 }
